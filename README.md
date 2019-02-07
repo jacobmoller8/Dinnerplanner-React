@@ -1,11 +1,11 @@
 # Dinner Planner React
 
+Jacob Möller & Hugo Bergqvist
+DH2642 Lab 4
+
+
 ## How to get started
 
-Since modern frameworks use some advanced features like compiling the templates and source code in pure
-JavaScript and dynamically loading the needed content, you cannot anymore just open the HTML file 
-in the browser. Instead, you will need a local webserver that will serve your app. Follow the instructions 
-bellow to install all the neded dependencies (e.g. the framework libraries) and the development webserver.
 
 1. First, make sure that you have npm installed on your system (follow the instructions
    at [Installing Node](https://docs.npmjs.com/getting-started/installing-node). The computers in the lab rooms
@@ -27,17 +27,9 @@ bellow to install all the neded dependencies (e.g. the framework libraries) and 
 * `src/App.js` - root component you can modify it's HTML and add different routes to it
 * `src/Dishes`, `src/SelectDish` etc. - contain the `.js` and `.css` file for each component. You should create your own components roughly corresponding to your views from previous labs.
 
-Check the components and see how they work. There are additional comments in the code.
 
 ## What you need to do
 
 * reimplement the missing views following React practices
 * use [Router](https://reacttraining.com/react-router/web/guides/philosophy) to map different url address (e.g. /search, /dish/ID) to specific components (the startup code already does that for welcome screen and select dish screen)
 * implement cookies or localStorage so that the numberOfGuests and menu are persisted on the page reload
-
-
-## Credits
-
-* Michel Tabari for fine tunning the code
-
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
