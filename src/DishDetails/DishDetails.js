@@ -30,12 +30,19 @@ class DishDetails extends Component {
 
                         {/* The left part of the view, describing the dish*/}
                         <div className="container-fluid col-6" id="dishDescription">
-                            <h3>Dish Title</h3>
+                            <h3 className="title" >Dish Title</h3>
+                            <img className="img-fluid" src="https://via.placeholder.com/600" alt="Unable to load..." id="dishImage" />
+                            <p>Nullam egestas lacus vel eros elementum viverra. Vivamus tristique quam vitae malesuada dictum. Donec fermentum nibh ac enim hendrerit sollicitudin. </p>
+                            <div className="container-fluid" id="backBtnContainer">
+                                <Button component={Link} to="/search" variant='contained' id="backToSearchBtn">
+                                    Back to search
+                                </Button>
+                            </div>
                         </div>
 
                         {/* The right part of the view, describing the ingredients of the dish*/}
                         <div className="container-fluid col-6" id="dishIngredients">
-                            <h3 id="ingredientTitle">Ingredients</h3>
+                            <h3 className="title">Ingredients</h3>
 
                             <div className="table-responsive">
                                 <div className="table table-hover">

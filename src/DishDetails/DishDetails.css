@@ -1,14 +1,15 @@
-#ingredientTitle{
+.title{
     padding-bottom: 20px;
 }
 
 #dishDetails{
-    padding: 20px;
+    padding: 30px;
 }
 
 #dishDescription{
-
+    padding: 0 30px;
 }
+
 
 #dishIngredients{
     padding: 10px;
@@ -21,4 +22,8 @@
 
 #ingredientTable{
     background-color: #ffb856;
+}
+
+#dishImage{
+    float:none;
 }
