@@ -1,3 +1,9 @@
 #goBackButton {
     font-size: 30px;
 }
+
+#dinnerPrintout {
+    text-align: center;
+    vertical-align: center;
+    padding: 30px;
+}
