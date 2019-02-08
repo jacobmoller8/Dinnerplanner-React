@@ -1,0 +1,31 @@
+.Sidebar{
+    float:left;
+    border-width: 2px;
+    border-style: solid;
+    border-top: none;
+    height: 100vh;
+    padding: 0px;
+}
+
+.sideBarTitles{
+    height: 7%;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: lightgrey;
+}
+
+
+.dishName{
+    float: left;
+}
+
+
+.cost{
+    float: right;
+    text-align: center;
+}
+
+#confirmDinnerBtn{
+    display: block;
+    margin: 0 auto;
+}

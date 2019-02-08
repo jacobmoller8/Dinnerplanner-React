@@ -20,6 +20,8 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+          {<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />}
+          {<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />}
 
           {/* We rended diffrent component based on the path */}
           <Route exact path="/" component={Welcome} />

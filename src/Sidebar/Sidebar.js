@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './Sidebar.css';
+import Button from '@material-ui/core/Button';
+
 class Sidebar extends Component {
 
   constructor(props) {
@@ -39,13 +41,20 @@ class Sidebar extends Component {
 
   render() {
     return (
-      <div className="Sidebar">
-        <h3>This is the sidebar</h3>
+      <div className="container-fluid col-3 d-none d-md-block Sidebar">
+        <h2>My dinner</h2>
         <p>
-        People: <input value={this.state.numberOfGuests} onChange={this.onNumberOfGuestsChanged}/>
-        <br/>
-        Total number of guests: {this.state.numberOfGuests}
+        People: <input type='number' value={this.state.numberOfGuests} onChange={this.onNumberOfGuestsChanged}/>
         </p>
+        <div className="container-fluid sideBarTitles">
+          <div className="row">
+            <div className="container-fluid col-6 dishName">dishName</div>
+            <div className="container-fluid col-6 cost">Cost</div>
+          </div>
+        </div>
+        <Button id="confirmDinnerBtn" variant='contained'>
+          Confirm Dinner
+        </Button>
       </div>
     );
   }
