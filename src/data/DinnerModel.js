@@ -1,15 +1,18 @@
 import APIkey from './APIkey.js'
 
 const httpOptions = {
-  headers: {'X-Mashape-Key': null}//APIkey
+  headers: { 'X-Mashape-Key': null }//APIkey
 };
 
 const DinnerModel = function () {
 
-  let numberOfGuests = 4;
-  let observers = [];
+  var observers = [];
+  var numberOfGuests = 1;
+  var menu = [];
+  var selectedDish = "";
 
   this.setNumberOfGuests = function (num) {
+    if (num < 1) return;
     numberOfGuests = num;
     notifyObservers();
   };
@@ -26,7 +29,7 @@ const DinnerModel = function () {
       .then(processResponse)
       .catch(handleError)
   }
-  
+
   // API Helper methods
 
   const processResponse = function (response) {
@@ -35,7 +38,7 @@ const DinnerModel = function () {
     }
     throw response;
   }
-  
+
   const handleError = function (error) {
     if (error.json) {
       error.json().then(error => {

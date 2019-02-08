@@ -6,7 +6,7 @@ class Sidebar extends Component {
 
   constructor(props) {
     super(props)
-    
+
     // we put on state the properties we want to use and modify in the component
     this.state = {
       numberOfGuests: this.props.model.getNumberOfGuests()
@@ -44,7 +44,7 @@ class Sidebar extends Component {
       <div className="container-fluid col-3 d-none d-md-block Sidebar">
         <h2>My dinner</h2>
         <p>
-        People: <input type='number' value={this.state.numberOfGuests} onChange={this.onNumberOfGuestsChanged}/>
+          People: <input type='number' value={this.state.numberOfGuests} onChange={this.onNumberOfGuestsChanged} />
         </p>
         <div className="container-fluid sideBarTitles">
           <div className="row">
