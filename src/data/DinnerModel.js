@@ -62,7 +62,7 @@ const DinnerModel = function () {
 
   //Returns the total price of the menu 
   this.getTotalMenuPrice = function () {
-    menuPrice = 0;
+    var menuPrice = 0;
     for (var i = 0; i < menu.length; i++) {
       menuPrice += this.getDishPrice(menu[i]);
     }
