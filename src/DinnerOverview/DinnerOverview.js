@@ -53,7 +53,9 @@ class DinnerOverview extends Component {
                         <div className="row">
                             <div className="col-sm"></div>
                             <div className="col-sm">
-                                <button id="printRecipeButton" typ="button" className="btn btn-warning">Print Full Recipe</button>
+                                <Link to="/printout">
+                                    <button id="printRecipeButton" typ="button" className="btn btn-warning">Print Full Recipe</button>
+                                </Link>
                             </div>
                             <div className="col-sm"></div>
                         </div>

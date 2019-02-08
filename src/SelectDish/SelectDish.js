@@ -14,7 +14,7 @@ class SelectDish extends Component {
 
         {/* We pass the model as property to the Sidebar component */}
         <Sidebar model={this.props.model} />
-        <Dishes />
+
 
         <div className="container-fluid col offset-sm-3 offset-lg-2 col-sm-9 col-lg-10" id="dishSearchNav">
           <h4>FIND A DISH</h4>
