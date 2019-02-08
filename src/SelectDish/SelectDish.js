@@ -25,7 +25,7 @@ class SelectDish extends Component {
               </div>
               <div className="form-group col-5">
                 <select className="form-control" id="typeSelect">
-                  <option selected value="all" id="allType">All</option>
+                  <option defaultValue="all" id="allType">All</option>
                   <option value="appetizer" id="starterType">Appetizer</option>
                   <option value="main course" id="mainType">Main course</option>
                   <option value="side dish" id="dessertType">Side dish</option>
