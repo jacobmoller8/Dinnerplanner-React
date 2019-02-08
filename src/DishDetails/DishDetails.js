@@ -12,7 +12,7 @@ class DishDetails extends Component {
                 </Header>
 
                 <div id="dishDetails" class="container-fluid col offset-sm-3 offset-lg-2 col-sm-9 col-lg-10">
-                    <div class="lds-dual-ring" id="loader"></div>
+
                     <div id="dishDescription"></div>
                 </div>
 

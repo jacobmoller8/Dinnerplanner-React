@@ -45,7 +45,7 @@ class SelectDish extends Component {
         <div className="container-fluid offset-sm-3 offset-lg-2 col-7 col-sm-9 col-lg-10" id="dishSearchBody">
 
           <div id="dishesSpan">
-            <div className="lds-dual-ring" id="loader"></div>
+
           </div>
         </div>
 
