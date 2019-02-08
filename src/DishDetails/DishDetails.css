@@ -1,3 +1,7 @@
+#ingredientTitle{
+    padding-bottom: 20px;
+}
+
 #dishDetails{
     padding: 20px;
 }
@@ -13,4 +17,8 @@
 .addBtnContainer{
     padding-top: 20px;
     text-align: left;
+}
+
+#ingredientTable{
+    background-color: #ffb856;
 }

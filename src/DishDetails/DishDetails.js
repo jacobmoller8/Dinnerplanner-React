@@ -35,29 +35,31 @@ class DishDetails extends Component {
 
                         {/* The right part of the view, describing the ingredients of the dish*/}
                         <div className="container-fluid col-6" id="dishIngredients">
-                            <h3>Ingredients</h3>
-                            
+                            <h3 id="ingredientTitle">Ingredients</h3>
+
                             <div className="table-responsive">
                                 <div className="table table-hover">
-                                    <tbody>
-                                        <tr>
-                                            <td>300</td>
-                                            <td>g</td>
-                                            <td>Lorem ipsum dolor sit amet</td>
-                                            <td>21</td>
-                                        </tr>
-                                        <tr>
-                                            <td>300</td>
-                                            <td>g</td>
-                                            <td>consectetur adipiscing elit.</td>
-                                            <td>24</td>
-                                        </tr>
-                                    </tbody>
+                                    <table className="table" id="ingredientTable">
+                                        <tbody>
+                                            <tr>
+                                                <td>300</td>
+                                                <td>g</td>
+                                                <td>Lorem ipsum dolor sit amet</td>
+                                                <td>21</td>
+                                            </tr>
+                                            <tr>
+                                                <td>300</td>
+                                                <td>g</td>
+                                                <td>consectetur adipiscing elit.</td>
+                                                <td>24</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             
                             <div className="container-fluid" id="addBtnContainer">
-                                <Button component={Link} to="/search" onClick={console.log('click')} variant='contained' id="addToMenuBtn">
+                                <Button component={Link} to="/search" onClick={console.log('Here it should add item to menu')} variant='contained' id="addToMenuBtn">
                                     Add to menu
                                 </Button>
                             </div>
