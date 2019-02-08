@@ -15,6 +15,40 @@ class SelectDish extends Component {
         {/* We pass the model as property to the Sidebar component */}
         <Sidebar model={this.props.model} />
         <Dishes />
+
+        <div class="container-fluid col offset-sm-3 offset-lg-2 col-sm-9 col-lg-10" id="dishSearchNav">
+          <h4>FIND A DISH</h4>
+
+          <form id="dishSearchForm">
+            <div class="form-row">
+              <div class="form-group col-5">
+                <input class="form-control" id="filterInput" placeholder="Enter keywords" />
+              </div>
+              <div class="form-group col-5">
+                <select class="form-control" id="typeSelect">
+                  <option selected value="all" id="allType">All</option>
+                  <option value="appetizer" id="starterType">Appetizer</option>
+                  <option value="main course" id="mainType">Main course</option>
+                  <option value="side dish" id="dessertType">Side dish</option>
+                  <option value="dessert" id="dessertType">Dessert</option>
+                  <option value="breakfast" id="dessertType">Breakfast</option>
+                  <option value="soup" id="dessertType">Soup</option>
+                </select>
+              </div>
+              <div class="form-group col-2">
+                <button type="button" id="searchDishButton" class="btn btn-secondary confirmDinnerButton">Search</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="container-fluid offset-sm-3 offset-lg-2 col-7 col-sm-9 col-lg-10" id="dishSearchBody">
+
+          <div id="dishesSpan">
+            <div class="lds-dual-ring" id="loader"></div>
+          </div>
+        </div>
+
       </div>
     );
   }

@@ -1,0 +1,11 @@
+.confirmDinnerButton{
+    display: block;
+    margin: auto;
+    padding: none;
+}
+
+.btn-secondary{
+    color: black;
+    background-color: #ffb856;
+    overflow: hidden;
+}
