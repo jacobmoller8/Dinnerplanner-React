@@ -1,0 +1,16 @@
+#dishDetails{
+    padding: 20px;
+}
+
+#dishDescription{
+
+}
+
+#dishIngredients{
+    padding: 10px;
+    background-color: #ffb856;
+}
+.addBtnContainer{
+    padding-top: 20px;
+    text-align: left;
+}

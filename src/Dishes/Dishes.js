@@ -3,6 +3,7 @@ import './Dishes.css';
 // Alternative to passing the moderl as the component property, 
 // we can import the model instance directly
 import {modelInstance} from '../data/DinnerModel';
+import Sidebar from '../Sidebar/Sidebar';
 
 
 class Dishes extends Component {
