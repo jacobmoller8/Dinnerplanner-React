@@ -1,12 +1,12 @@
 import APIkey from './APIkey.js'
 
-const httpOptions = {
-  headers: { 'X-Mashape-Key': null }//APIkey
-};
+
 
 const DinnerModel = function () {
 
+  const key = APIkey;
   var observers = [];
+  console.log(observers);
   var numberOfGuests = 1;
   var menu = [];
   var selectedDish = "";
@@ -38,7 +38,7 @@ const DinnerModel = function () {
   };
 
   //Returns the dish that is on the menu for selected type 
-  this.getSelectedDish = function (type) {
+  this.getSelectedDish = function () {
     return selectedDish;
   }
 
@@ -57,7 +57,7 @@ const DinnerModel = function () {
   this.getDishPrice = function (dish) {
     var dishPrice = 0;
     dishPrice += dish.pricePerServing * numberOfGuests;
-    return parseInt(dishPrice.toFixed(2));
+    return parseInt(dishPrice.toFixed(2), 10);
   }
 
   //Returns the total price of the menu 
@@ -98,7 +98,7 @@ const DinnerModel = function () {
     var ApiUrl = `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?instructionsRequired=false&limitLicense=false&number=8&offset=0&query=${filterVar}&type=${typeVar}`
     return fetch(ApiUrl
       , {
-        headers: { 'X-Mashape-Key': APIkey }
+        headers: { 'X-Mashape-Key': key }
       }).then(response => response.json())
       .then(data => data.results);
   }
@@ -107,7 +107,7 @@ const DinnerModel = function () {
     var ApiUrl = `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/${id}/information`;
     return fetch(ApiUrl
       , {
-        headers: { 'X-Mashape-Key': APIkey }
+        headers: { 'X-Mashape-Key': key }
       }).then(response => response.json())
   }
 

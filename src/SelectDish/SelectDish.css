@@ -9,3 +9,22 @@
     background-color: #ffb856;
     overflow: hidden;
 }
+
+.imgCont{
+    padding-bottom: 20px;
+    height: auto;
+    float: left;
+}
+
+.foodPic{
+    width: 100% ;
+    height: 200px;
+    object-fit: cover;
+}
+.dishBtn{
+    width: 100%;
+    border-radius: 0;
+    padding: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+}
