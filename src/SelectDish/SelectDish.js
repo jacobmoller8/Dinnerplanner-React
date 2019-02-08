@@ -16,16 +16,16 @@ class SelectDish extends Component {
         <Sidebar model={this.props.model} />
         <Dishes />
 
-        <div class="container-fluid col offset-sm-3 offset-lg-2 col-sm-9 col-lg-10" id="dishSearchNav">
+        <div className="container-fluid col offset-sm-3 offset-lg-2 col-sm-9 col-lg-10" id="dishSearchNav">
           <h4>FIND A DISH</h4>
 
           <form id="dishSearchForm">
-            <div class="form-row">
-              <div class="form-group col-5">
-                <input class="form-control" id="filterInput" placeholder="Enter keywords" />
+            <div className="form-row">
+              <div className="form-group col-5">
+                <input className="form-control" id="filterInput" placeholder="Enter keywords" />
               </div>
-              <div class="form-group col-5">
-                <select class="form-control" id="typeSelect">
+              <div className="form-group col-5">
+                <select className="form-control" id="typeSelect">
                   <option selected value="all" id="allType">All</option>
                   <option value="appetizer" id="starterType">Appetizer</option>
                   <option value="main course" id="mainType">Main course</option>
@@ -35,17 +35,17 @@ class SelectDish extends Component {
                   <option value="soup" id="dessertType">Soup</option>
                 </select>
               </div>
-              <div class="form-group col-2">
-                <button type="button" id="searchDishButton" class="btn btn-secondary confirmDinnerButton">Search</button>
+              <div className="form-group col-2">
+                <button type="button" id="searchDishButton" className="btn btn-secondary confirmDinnerButton">Search</button>
               </div>
             </div>
           </form>
         </div>
 
-        <div class="container-fluid offset-sm-3 offset-lg-2 col-7 col-sm-9 col-lg-10" id="dishSearchBody">
+        <div className="container-fluid offset-sm-3 offset-lg-2 col-7 col-sm-9 col-lg-10" id="dishSearchBody">
 
           <div id="dishesSpan">
-            <div class="lds-dual-ring" id="loader"></div>
+            <div className="lds-dual-ring" id="loader"></div>
           </div>
         </div>
 
