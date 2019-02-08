@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import './Sidebar.css';
 import Button from '@material-ui/core/Button';
 
@@ -6,7 +7,6 @@ class Sidebar extends Component {
 
   constructor(props) {
     super(props)
-    
     // we put on state the properties we want to use and modify in the component
     this.state = {
       numberOfGuests: this.props.model.getNumberOfGuests()
@@ -39,22 +39,28 @@ class Sidebar extends Component {
     this.props.model.setNumberOfGuests(+e.target.value)
   }
 
+
   render() {
     return (
       <div className="container-fluid col-3 d-none d-md-block Sidebar">
         <h2>My dinner</h2>
         <p>
-        People: <input type='number' value={this.state.numberOfGuests} onChange={this.onNumberOfGuestsChanged}/>
+          People: <input type='number' value={this.state.numberOfGuests} onChange={this.onNumberOfGuestsChanged} />
         </p>
+
         <div className="container-fluid sideBarTitles">
           <div className="row">
-            <div className="container-fluid col-6 dishName">dishName</div>
+            <div className="container-fluid col-6 dishName">Dish Name</div>
             <div className="container-fluid col-6 cost">Cost</div>
           </div>
         </div>
-        <Button id="confirmDinnerBtn" variant='contained'>
-          Confirm Dinner
-        </Button>
+
+        <div className="container-fluid btnContainer">
+          <Button component={Link} to="/overview" variant='contained' id="confirmDinnerBtn">
+            Confirm Dinner
+          </Button>
+        </div>
+
       </div>
     );
   }
