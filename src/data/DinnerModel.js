@@ -1,5 +1,7 @@
+import APIkey from './APIkey.js'
+
 const httpOptions = {
-  headers: {'X-Mashape-Key': 'YOUR_API_KEY'}
+  headers: {'X-Mashape-Key': null}//APIkey
 };
 
 const DinnerModel = function () {
