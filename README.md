@@ -4,9 +4,9 @@ Jacob Möller & Hugo Bergqvist
 DH2642 Lab 4
 
 
-# Uppdatering 9/2-19
+## Uppdatering 9/2-19
 
-##***** --> OBS OBS OBS: setState() Triggar en re-render, risk för loopar! OBS OBS OBS <-- *****##
+OBS OBS OBS: setState() Triggar en re-render, risk för loopar! OBS OBS OBS
 
 Att klicka på en dish i Dishes.js funkar, men alla leder till samma dish. Tror detta beror på att koden just nu binder id:t till den sist
 renderade dishen till alla knappar.. av någon anledning..
@@ -17,17 +17,23 @@ Jag har inte pillat något i overView eller PrintOut
 
 TODO:
 Dishes.js
-    -Sökfunktionen verkar inte funka
-    -Fixa så att knappen på maträtter leder till rätt dishDetails
+* Sökfunktionen verkar inte funka
+* Fixa så att knappen på maträtter leder till rätt dishDetails
 
 Sidebar.js  
-    -Det går inte att ta bort maträtter
-    -Uppdatera priser med antalet personer
+* Det går inte att ta bort maträtter
+* Uppdatera priser med antalet personer
 
 DishDetails.js
-    - Lägg till pris för maträtt
-    - Uppdatera siffror i ingredienser beroende på antalet personer
+* Lägg till pris för maträtt
+* Uppdatera siffror i ingredienser beroende på antalet personer
 
+DinnerOverview.js
+* Visa menyn med bilder och priser
+* Totalkostnad
+
+DinnerPrintout.js
+* Dynamiska delen med bilder och beskrivning
 
 
 

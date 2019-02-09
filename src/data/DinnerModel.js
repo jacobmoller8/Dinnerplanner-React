@@ -45,6 +45,7 @@ const DinnerModel = function () {
   // Set Selected Dish Id
   this.setSelectedDishId = function (id) {
     selectedDish = id;
+    console.log(id);
     notifyObservers();
   }
 
