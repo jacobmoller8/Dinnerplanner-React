@@ -4,6 +4,35 @@ Jacob Möller & Hugo Bergqvist
 DH2642 Lab 4
 
 
+# Uppdatering 9/2-19
+
+##***** --> OBS OBS OBS: setState() Triggar en re-render, risk för loopar! OBS OBS OBS <-- *****##
+
+Att klicka på en dish i Dishes.js funkar, men alla leder till samma dish. Tror detta beror på att koden just nu binder id:t till den sist
+renderade dishen till alla knappar.. av någon anledning..
+
+DishDetails laddar data utan att loopa nu och det går att lägga till i menyn
+
+Jag har inte pillat något i overView eller PrintOut
+
+TODO:
+Dishes.js
+    -Sökfunktionen verkar inte funka
+    -Fixa så att knappen på maträtter leder till rätt dishDetails
+
+Sidebar.js  
+    -Det går inte att ta bort maträtter
+    -Uppdatera priser med antalet personer
+
+DishDetails.js
+    - Lägg till pris för maträtt
+    - Uppdatera siffror i ingredienser beroende på antalet personer
+
+
+
+
+
+
 ## What you need to do
 
 * reimplement the missing views following React practices
