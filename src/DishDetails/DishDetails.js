@@ -15,21 +15,6 @@ class DishDetails extends Component {
 		curIngredients: []
 	}
 	
-	loadDish(){
-		this.props.model.getDishApi(this.state.curId).then(results => {
-			this.setState({ 
-				curImg: results.image,
-				curTitle: results.title,
-				curIngredients: results.extendedIngredients,
-				curInstructions: results.instructions,
-				curPrice: results.pricePerServing,
-		})
-	})
-	}
-	
-	componentDidMount() {
-		// this.loadDish()
-  }
 
     render() {
         return (

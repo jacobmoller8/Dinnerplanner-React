@@ -7,6 +7,7 @@ import SelectDish from "./SelectDish/SelectDish";
 import DishDetails from "./DishDetails/DishDetails";
 import DinnerOverview from "./DinnerOverview/DinnerOverview";
 import DinnerPrintout from "./DinnerPrintout/DinnerPrintout";
+import Dishes from "./Dishes/Dishes";
 
 class App extends Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class App extends Component {
 
           {/* We rended diffrent component based on the path */}
           <Route exact path="/" component={Welcome} />
-          <Route path="/search" render={() => <SelectDish model={modelInstance} />} />
+          <Route path="/search" render={() => <Dishes model={modelInstance} />} />
           <Route path="/details" render={() => <DishDetails model={modelInstance} />} />
           <Route path="/overview" render={() => <DinnerOverview model={modelInstance} />} />
           <Route path="/printout" render={() => <DinnerPrintout model={modelInstance} />} />

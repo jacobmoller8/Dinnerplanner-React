@@ -99,8 +99,8 @@ const DinnerModel = function () {
     return fetch(ApiUrl
       , {
         headers: { 'X-Mashape-Key': key }
-      }).then(response => response.json())
-      .then(data => data.results);
+      }).then(response => processResponse(response))
+      .then(data => data.results).catch(error => handleError(error));
   }
   // Get selected dish from API
   this.getDishApi = function (id) {
@@ -108,11 +108,10 @@ const DinnerModel = function () {
     return fetch(ApiUrl
       , {
         headers: { 'X-Mashape-Key': key }
-      }).then(response => response.json())
+      }).then(response => processResponse(response)).catch(error => handleError(error))
   }
 
   // API Helper methods
-
   const processResponse = function (response) {
     if (response.ok) {
       return response.json()
