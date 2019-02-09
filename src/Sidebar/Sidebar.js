@@ -43,10 +43,10 @@ class Sidebar extends Component {
   render() {
     let currentMenu = null;
 
-    currentMenu = this.props.model.getFullMenu().map((dish) => 
-      <div className="row">
-            <div className="container-fluid col-6 dishName">{dish.title}</div>
-            <div className="container-fluid col-6 cost">{dish.pricePerServing}</div>
+    currentMenu = this.props.model.getFullMenu().map((dish) =>
+      <div className="row" key={dish.title}>
+        <div className="container-fluid col-6 dishName">{dish.title}</div>
+        <div className="container-fluid col-6 cost">{dish.pricePerServing}</div>
       </div>
     );
 
