@@ -41,6 +41,15 @@ class Sidebar extends Component {
 
 
   render() {
+    let currentMenu = null;
+
+    currentMenu = this.props.model.getFullMenu().map((dish) => 
+      <div className="row">
+            <div className="container-fluid col-6 dishName">{dish.title}</div>
+            <div className="container-fluid col-6 cost">{dish.pricePerServing}</div>
+      </div>
+    );
+
     return (
       <div className="container-fluid col-3 d-none d-md-block Sidebar">
         <h2>My dinner</h2>
@@ -54,6 +63,7 @@ class Sidebar extends Component {
             <div className="container-fluid col-6 cost">Cost</div>
           </div>
         </div>
+        {currentMenu}
 
         <div className="container-fluid btnContainer">
           <Button component={Link} to="/overview" variant='contained' id="confirmDinnerBtn">
