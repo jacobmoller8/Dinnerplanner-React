@@ -6,33 +6,48 @@ import Sidebar from '../Sidebar/Sidebar';
 import Button from '@material-ui/core/Button';
 
 class DishDetails extends Component {
+	state = {
+		curId: this.props.model.getSelectedDish(),
+		curTitle: '',
+		curImg: '',
+		curInstructions: '',
+		curPrice: '',
+		curIngredients: []
+	}
+	
+	loadDish(){
+		this.props.model.getDishApi(this.state.curId).then(results => {
+			this.setState({ 
+				curImg: results.image,
+				curTitle: results.title,
+				curIngredients: results.extendedIngredients,
+				curInstructions: results.instructions,
+				curPrice: results.pricePerServing,
+		})
+	})
+	}
+	
+	componentDidMount() {
+		// this.loadDish()
+  }
+
     render() {
         return (
             <div>
-
-                {/*
-                TODO:
-                Hitta selectedDish från model
-                Hämta informationen om selected Dish från API:t (via model)
-                Fyll följande element:
-                    -titel
-                    -bild
-                    -beskrivning
-                
-                Iterera genom ingredienserna och fyll ingredient-table:t
-                */}
                 <Header />
 
                 <Sidebar model={this.props.model} />
 
+							
+								
                 <div id="dishDetails" className="container-fluid col offset-sm-3 offset-lg-2 col-sm-9 col-lg-10">
                     <div className="row">
 
                         {/* The left part of the view, describing the dish*/}
                         <div className="container-fluid col-6" id="dishDescription">
-                            <h3 className="title" >Dish Title</h3>
-                            <img className="img-fluid" src="https://via.placeholder.com/600" alt="Unable to load..." id="dishImage" />
-                            <p>Nullam egestas lacus vel eros elementum viverra. Vivamus tristique quam vitae malesuada dictum. Donec fermentum nibh ac enim hendrerit sollicitudin. </p>
+                            <h3 className="title" >{this.state.curTitle}</h3>
+                            <img className="img-fluid" src={this.state.curImg} alt="Unable to load..." id="dishImage" />
+                            <p>{this.state.curInstructions}</p>
                             <div className="container-fluid" id="backBtnContainer">
                                 <Button component={Link} to="/search" variant='contained' id="backToSearchBtn">
                                     Back to search

@@ -58,7 +58,7 @@ class SelectDish extends Component {
       <div className="container-fluid col-12 col-lg-3 col-md-3 col-sm-4 imgCont" key={dish.id}>
         <img src={"https://spoonacular.com/recipeImages/" + dish.image} className="foodPic" alt="" />
         <Link to="/Details">
-          <button id={dish.id} className="btn btn-secondary dishBtn">{dish.title}</button>
+          <button onClick={this.props.model.setSelectedDishId(dish.id)} id={dish.id} className="btn btn-secondary dishBtn">{dish.title}</button>
         </Link>
       </div>
     )
