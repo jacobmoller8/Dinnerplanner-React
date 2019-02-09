@@ -8,16 +8,15 @@ DH2642 Lab 4
 
 OBS OBS OBS: setState() Triggar en re-render, risk för loopar! OBS OBS OBS
 
-Att klicka på en dish i Dishes.js funkar, men alla leder till samma dish. Tror detta beror på att koden just nu binder id:t till den sist
-renderade dishen till alla knappar.. av någon anledning..
+Att klicka på en dish i Dishes.js funkar, men alla leder till samma dish. Tror detta beror på att koden just nu binder id:t till den sist renderade dishen till alla knappar.. av någon anledning..
 
-DishDetails laddar data utan att loopa nu och det går att lägga till i menyn
+// Den gör detta för att Onclick kallas när den renderar objekten av någon anledning istället för att att triggas vi onClick.
 
-Jag har inte pillat något i overView eller PrintOut
 
 TODO:
+
 Dishes.js
-* Sökfunktionen verkar inte funka
+* Sökfunktionen verkar inte funka (DONE)
 * Fixa så att knappen på maträtter leder till rätt dishDetails
 
 Sidebar.js  

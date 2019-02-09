@@ -13,7 +13,8 @@ class Dishes extends Component {
     // We create the state to store the various statuses
     // e.g. API data loading or error 
     this.state = {
-      status: 'INITIAL'
+      status: 'INITIAL',
+      dishes: []
     }
   }
 
@@ -90,7 +91,7 @@ class Dishes extends Component {
 
     return (
       <div className="SelectDish">
-        <Header/>
+        <Header />
 
         {/* We pass the model as property to the Sidebar component */}
         <Sidebar model={this.props.model} />
@@ -115,7 +116,7 @@ class Dishes extends Component {
                 </select>
               </div>
               <div className="form-group col-2">
-                <button type="button" id="searchDishButton" className="btn btn-secondary confirmDinnerButton" onClick={this.update}>Search</button>
+                <button type="button" id="searchDishButton" className="btn btn-secondary confirmDinnerButton" onClick={this.componentDidMount}>Search</button>
 
               </div>
             </div>
