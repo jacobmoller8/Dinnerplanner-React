@@ -6,7 +6,6 @@ const DinnerModel = function () {
 
   const key = APIkey;
   var observers = [];
-  console.log(observers);
   var numberOfGuests = 1;
   var menu = [];
   var selectedDish = "";

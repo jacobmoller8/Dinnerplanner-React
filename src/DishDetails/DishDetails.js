@@ -49,7 +49,7 @@ class DishDetails extends Component {
                         <table className="table" id="ingredientTable">
                             <tbody>
                                 {this.state.dish.extendedIngredients.map((ingredient) =>
-                                    <tr>
+                                    <tr key={ingredient.name}>
                                         <td>{ingredient.amount}</td>
                                         <td>{ingredient.unit}</td>
                                         <td>{ingredient.name}</td>
@@ -89,7 +89,7 @@ class DishDetails extends Component {
                             <h3 className="title">Ingredients</h3>
                             {table}
                             <div className="container-fluid" id="addBtnContainer">
-                                <Button component={Link} to="/search" onClick={this.handleAddClick} variant='contained' id="addToMenuBtn">
+                                <Button component={Link} to="/details" onClick={this.handleAddClick} variant='contained' id="addToMenuBtn">
                                     Add to menu
                                 </Button>
                             </div>
