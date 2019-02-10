@@ -25,11 +25,17 @@ DishDetails.js
 * Lägga in totalpris
 
 DinnerOverview.js
-* Visa menyn med bilder och priser
-* Totalkostnad
+* Visa menyn med bilder och priser (DONE)
+* Totalkostnad (DONE)
 
 DinnerPrintout.js
 * Dynamiska delen med bilder och beskrivning
+
+Annat:
+* Cookies
+* Enter buggen i Dishes.js
+* MobileNavBar (samma filer som sidebar eller nya?)
+
 
 
 
