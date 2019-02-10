@@ -29,7 +29,7 @@ DinnerOverview.js
 * Totalkostnad (DONE)
 
 DinnerPrintout.js
-* Dynamiska delen med bilder och beskrivning
+* Dynamiska delen med bilder och beskrivning (DONE)
 
 Annat:
 * Cookies

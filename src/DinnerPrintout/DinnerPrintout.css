@@ -7,3 +7,7 @@
     vertical-align: center;
     padding: 30px;
 }
+
+#dishTitle {
+    display: inline-block !important;
+}

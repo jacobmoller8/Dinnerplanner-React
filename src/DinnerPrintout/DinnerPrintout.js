@@ -9,7 +9,8 @@ class DinnerPrintout extends Component {
         super(props)
 
         this.state = {
-            numberOfGuests: this.props.model.getNumberOfGuests()
+            numberOfGuests: this.props.model.getNumberOfGuests(),
+            menu: this.props.model.getFullMenu()
         }
     }
     componentDidMount() {
@@ -20,12 +21,38 @@ class DinnerPrintout extends Component {
     }
     update() {
         this.setState({
-            numberOfGuests: this.props.model.getNumberOfGuests()
+            numberOfGuests: this.props.model.getNumberOfGuests(),
+            menu: this.props.model.getFullMenu()
         })
     }
     render() {
+
+        let dishesList = null;
+
+        dishesList = this.state.menu.map((dish, index) =>
+            <div className="row justify-content-md-center mt-4 mb-4" key={index}>
+                <div className="col-sm-1" />
+                <div className="col-md-5">
+                    <div className="row">
+                        <div className="col-md-5">
+                            <img src={dish.image} width="100%" className="img-fluid" alt="Responsive image" />
+                        </div>
+                        <div className="col-md-7">
+                            <h4 id="dishTitle"> {dish.title} </h4>
+                            <p>Lorem Ipsum</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-md">
+                    <h4>Preparation</h4>
+                    <p>{dish.instructions}</p>
+                </div>
+            </div>
+
+        )
+
         return (
-            <div>
+            <React.Fragment>
                 <Header>
                 </Header>
 
@@ -45,11 +72,11 @@ class DinnerPrintout extends Component {
                     </div>
 
                     <div id="dinnerSpecifics" className="container-fluid border">
-                        <span id="dishesModel"></span>
+                        {dishesList}
                     </div>
                 </div>
 
-            </div>
+            </React.Fragment>
         );
     }
 }
