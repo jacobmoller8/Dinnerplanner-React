@@ -8,6 +8,7 @@ class Sidebar extends Component {
   constructor(props) {
     super(props)
     // we put on state the properties we want to use and modify in the component
+    this.handleRemoveClick = this.handleRemoveClick.bind(this);
     this.state = {
       numberOfGuests: this.props.model.getNumberOfGuests()
     }
@@ -39,14 +40,20 @@ class Sidebar extends Component {
     this.props.model.setNumberOfGuests(+e.target.value)
   }
 
+  handleRemoveClick = (e) => {
+    console.log("Click came from: " + e.target.getAttribute('id'))
+    //this.props.model.removeDishFromMenu(this.target.id)
+}
 
   render() {
     let currentMenu = null;
 
     currentMenu = this.props.model.getFullMenu().map((dish) =>
       <div className="row" key={dish.title}>
-        <div className="container-fluid col-6 dishName">{dish.title}</div>
-        <div className="container-fluid col-6 cost">{dish.pricePerServing}</div>
+        <div className="container-fluid menuItem" id={parseInt(dish.id)} onClick={this.handleRemoveClick}>
+          <div className="container-fluid col-6 dishName">{dish.title}</div>
+          <div className="container-fluid col-6 cost">{dish.pricePerServing}</div>
+        </div>
       </div>
     );
 
