@@ -34,7 +34,7 @@ class DinnerOverview extends Component {
 
         dishesList = this.state.menu.map((dish, index) =>
             <div className="mt-4 col-12 col-lg-2 col-md-2 col-sm-3 imgCont" key={index}>
-                <img src={dish.image} className="foodPic" />
+                <img src={dish.image} className="foodPic" alt={dish.image} />
                 <button id={dish.id} className="btn btn-secondary dishBtn"> {dish.title} </button>
                 <h4 id="dishPrice">{this.props.model.getDishPrice(dish)} SEK</h4>
             </div>

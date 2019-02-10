@@ -21,7 +21,7 @@ Sidebar.js
 
 DishDetails.js
 * Lägg till pris för maträtt (DONE)
-* Uppdatera siffror i ingredienser beroende på antalet personer
+* Uppdatera siffror i ingredienser beroende på antalet personer (DONE)
 
 DinnerOverview.js
 * Visa menyn med bilder och priser (DONE)
@@ -31,8 +31,10 @@ DinnerPrintout.js
 * Dynamiska delen med bilder och beskrivning (DONE)
 
 Annat:
+* Ta bort konsol rekommendationer / buggar
 * Cookies
 * Enter buggen i Dishes.js
+* Se över observers så att allt kallas på rätt sätt
 * MobileNavBar (samma filer som sidebar eller nya?)
 
 

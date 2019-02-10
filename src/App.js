@@ -3,7 +3,7 @@ import './App.css';
 import { Route } from 'react-router-dom';
 import Welcome from './Welcome/Welcome';
 import { modelInstance } from './data/DinnerModel'
-import SelectDish from "./SelectDish/SelectDish";
+//import SelectDish from "./SelectDish/SelectDish";
 import DishDetails from "./DishDetails/DishDetails";
 import DinnerOverview from "./DinnerOverview/DinnerOverview";
 import DinnerPrintout from "./DinnerPrintout/DinnerPrintout";
@@ -24,7 +24,6 @@ class App extends Component {
           {<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />}
           {<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />}
 
-          {/* We rended diffrent component based on the path */}
           <Route exact path="/" component={Welcome} />
           <Route path="/search" render={() => <Dishes model={modelInstance} />} />
           <Route path="/details" render={() => <DishDetails model={modelInstance} />} />

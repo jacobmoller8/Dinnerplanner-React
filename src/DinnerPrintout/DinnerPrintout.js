@@ -35,7 +35,7 @@ class DinnerPrintout extends Component {
                 <div className="col-md-5">
                     <div className="row">
                         <div className="col-md-5">
-                            <img src={dish.image} width="100%" className="img-fluid" alt="Responsive image" />
+                            <img src={dish.image} width="100%" className="img-fluid" alt={dish.image} />
                         </div>
                         <div className="col-md-7">
                             <h4 id="dishTitle"> {dish.title} </h4>

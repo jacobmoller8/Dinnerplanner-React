@@ -51,7 +51,7 @@ class DishDetails extends Component {
                             <tbody>
                                 {this.state.dish.extendedIngredients.map((ingredient) =>
                                     <tr key={ingredient.name}>
-                                        <td>{ingredient.amount}</td>
+                                        <td>{ingredient.amount * this.state.numberOfGuests}</td>
                                         <td>{ingredient.unit}</td>
                                         <td>{ingredient.name}</td>
                                     </tr>

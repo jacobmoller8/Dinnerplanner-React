@@ -43,14 +43,14 @@ class Sidebar extends Component {
   handleRemoveClick = (e) => {
     console.log("Click came from: " + e.target.getAttribute('id'))
     //this.props.model.removeDishFromMenu(this.target.id)
-}
+  }
 
   render() {
     let currentMenu = null;
 
     currentMenu = this.props.model.getFullMenu().map((dish) =>
       <div className="row" key={dish.title}>
-        <div className="container-fluid menuItem" id={parseInt(dish.id)} onClick={this.handleRemoveClick}>
+        <div className="container-fluid menuItem" id={parseInt(dish.id, 10)} onClick={this.handleRemoveClick}>
           <div className="container-fluid col-6 dishName">{dish.title}</div>
           <div className="container-fluid col-6 cost">{dish.pricePerServing}</div>
         </div>
