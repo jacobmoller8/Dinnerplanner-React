@@ -9,7 +9,9 @@ class DinnerOverview extends Component {
         super(props)
 
         this.state = {
-            numberOfGuests: this.props.model.getNumberOfGuests()
+            numberOfGuests: this.props.model.getNumberOfGuests(),
+            menu: this.props.model.getFullMenu(),
+            totalMenuPrice: this.props.model.getTotalMenuPrice()
         }
     }
     componentDidMount() {
@@ -20,12 +22,24 @@ class DinnerOverview extends Component {
     }
     update() {
         this.setState({
-            numberOfGuests: this.props.model.getNumberOfGuests()
+            numberOfGuests: this.props.model.getNumberOfGuests(),
+            menu: this.props.model.getFullMenu(),
+            totalMenuPrice: this.props.model.getTotalMenuPrice()
         })
     }
 
-
     render() {
+
+        let dishesList = null;
+
+        dishesList = this.state.menu.map((dish, index) =>
+            <div className="mt-4 col-12 col-lg-2 col-md-2 col-sm-3 imgCont" key={index}>
+                <img src={dish.image} className="foodPic" />
+                <button id={dish.id} className="btn btn-secondary dishBtn"> {dish.title} </button>
+                <h4 id="dishPrice">{this.props.model.getDishPrice(dish)} SEK</h4>
+            </div>
+        )
+
         return (
             <div>
                 <Header>
@@ -46,7 +60,16 @@ class DinnerOverview extends Component {
                     </div>
 
                     <div id="dinnerSpecifics" className="container-fluid border">
-                        <span id="dishesModel"></span>
+                        <div className="row justify-content-md-center">
+
+                            {dishesList}
+
+                            <div id="totalCost" className="col-md-auto border-left">
+                                <h2 id="totalTag">Total:</h2>
+                                <h4 id="menuPrice"> {this.state.totalMenuPrice} SEK</h4>
+                            </div>
+
+                        </div>
                     </div>
 
                     <div id="recipeButtonContainer" className="container-fluid">
