@@ -12,7 +12,8 @@ class DishDetails extends Component {
         // e.g. API data loading or error 
         this.handleAddClick = this.handleAddClick.bind(this);
         this.state = {
-            status: 'INITIAL'
+            status: 'INITIAL',
+            numberOfGuests: this.props.model.getNumberOfGuests()
         }
     }
 
@@ -55,6 +56,11 @@ class DishDetails extends Component {
                                         <td>{ingredient.name}</td>
                                     </tr>
                                 )}
+                                <tr>
+                                    <td>Price:</td>
+                                    <td>{Math.round(this.state.dish.pricePerServing * this.state.numberOfGuests)} SEK</td>
+                                    <td></td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>

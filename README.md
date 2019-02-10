@@ -4,10 +4,9 @@ Jacob Möller & Hugo Bergqvist
 DH2642 Lab 4
 
 
-## Uppdatering 9/2-19
+## Uppdatering 10/2-19
 
-OBS OBS OBS: setState() Triggar en re-render, risk för loopar! OBS OBS OBS
-
+OBS: setState() Triggar en re-render, risk för loopar!
 
 ### TODO:
 
@@ -18,11 +17,11 @@ Dishes.js
 Sidebar.js  
 * Det går inte att ta bort maträtter
 * Uppdatera priser med antalet personer
+* Lägga in totalpris
 
 DishDetails.js
-* Lägg till pris för maträtt
+* Lägg till pris för maträtt (DONE)
 * Uppdatera siffror i ingredienser beroende på antalet personer
-* Lägga in totalpris
 
 DinnerOverview.js
 * Visa menyn med bilder och priser (DONE)
@@ -35,9 +34,6 @@ Annat:
 * Cookies
 * Enter buggen i Dishes.js
 * MobileNavBar (samma filer som sidebar eller nya?)
-
-
-
 
 
 
