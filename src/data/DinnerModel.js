@@ -14,6 +14,7 @@ const DinnerModel = function () {
 
   this.addObserver = function (observer) {
     observers.push(observer);
+    console.log(observers);
   };
 
   this.removeObserver = function (observer) {
@@ -76,16 +77,16 @@ const DinnerModel = function () {
 
   //Removes dish from menu
   this.removeDishFromMenu = function (id) {
-		let counter = 0
-		let index = 0
+    let counter = 0
+    let index = 0
 
-		for (let item in menu){
-			if (parseInt(menu[item].id, 10) === id){
-				index = counter
-				break;
-			}
-			counter += 1
-		}
+    for (let item in menu) {
+      if (parseInt(menu[item].id, 10) === id) {
+        index = counter
+        break;
+      }
+      counter += 1
+    }
     menu.splice(index, 1);
     notifyObservers();
   }

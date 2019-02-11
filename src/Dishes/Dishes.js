@@ -22,6 +22,9 @@ class Dishes extends Component {
   // component is actually shown to the user (mounted to DOM)
   // that's a good place to call the API and get the data
   componentDidMount = () => {
+
+    this.props.model.addObserver(this);
+
     var filterValue = this.refs.filterInput.value;
     var typeValue = this.refs.typeSelect.value;
 
@@ -61,7 +64,14 @@ class Dishes extends Component {
     }
     // when data is retrieved we update the state
     // this will cause the component to re-render
+  }
 
+  componentWillUnmount() {
+    this.props.model.removeObserver(this);
+  }
+
+  update = () => {
+    console.log("hej");
   }
 
   render() {
