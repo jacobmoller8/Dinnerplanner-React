@@ -58,13 +58,14 @@ class Sidebar extends Component {
     );
 
     return (
-      <div className="container-fluid col-3 d-none d-md-block Sidebar">
+      <div className="container-fluid col-3 d-none d-sm-block Sidebar">
         <h2>My dinner</h2>
-        <p>
-          People: <input type='number' value={this.state.numberOfGuests} onChange={this.onNumberOfGuestsChanged} />
-        </p>
+				<div className="row">
+					<p>People: </p>
+					<input className="form-control col-4 peopleSelector" type='number' value={this.state.numberOfGuests} onChange={this.onNumberOfGuestsChanged} />
+				</div>
 
-        <div className="container-fluid sideBarTitles">
+        <div className="container-fluid col-12 sideBarTitles">
           <div className="row">
             <div className="container-fluid col-6 dishName">Dish Name</div>
             <div className="container-fluid col-6 cost">Cost</div>
