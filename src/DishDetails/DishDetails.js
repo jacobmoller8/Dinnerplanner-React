@@ -18,6 +18,9 @@ class DishDetails extends Component {
     }
 
     componentDidMount = () => {
+
+        this.props.model.addObserver(this);
+
         this.props.model.getDishApi(this.props.model.getSelectedDish()).then(result => {
             this.setState({
                 status: 'LOADED',
@@ -30,12 +33,21 @@ class DishDetails extends Component {
         })
     }
 
+    componentWillUnmount() {
+        this.props.model.removeObserver(this);
+    }
+
     handleAddClick = () => {
-				this.props.model.addDishToMenu(this.state.dish)
-		}
-		
-	
-		
+        this.props.model.addDishToMenu(this.state.dish)
+    }
+
+    update = () => {
+        this.setState({
+            numberOfGuests: this.props.model.getNumberOfGuests()
+        })
+    }
+
+
     render() {
         let dish = null;
         let table = null;
