@@ -33,7 +33,7 @@ DinnerPrintout.js
 Annat:
 * Ta bort konsol rekommendationer / buggar
 * Cookies
-* Enter buggen i Dishes.js
+* Enter buggen i Dishes.js (DONE)
 * Se över observers så att allt kallas på rätt sätt
 * MobileNavBar (samma filer som sidebar eller nya?)
 
