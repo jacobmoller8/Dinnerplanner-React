@@ -30,14 +30,12 @@ class Sidebar extends Component {
 
 	loadMenu() {
 		let loadedMenu = this.props.model.getFullMenu().map((dish, i) =>
-		<div className="row" key={dish.title +" "+ i}>
-		 <div className="container-fluid menuItem" id={parseInt(dish.id, 10)} onClick={this.handleRemoveClick}>
-			 <div className="container-fluid col-6 dishName">{dish.title}</div>
-			 <div className="container-fluid col-6 cost">{dish.pricePerServing * this.props.model.getNumberOfGuests()}</div>
-		 </div>
-	 </div>);
+			<div className="container-fluid col-12 menuItem" key={dish.title + " " + i} id={parseInt(dish.id, 10)} onClick={this.handleRemoveClick}>
+				<div className="container-fluid col-6 dishName">{dish.title}</div>
+				<div className="container-fluid col-6 cost">{dish.pricePerServing * this.props.model.getNumberOfGuests()}</div>
+			</div>);
 
-	 return loadedMenu
+		return loadedMenu
 	}
 
 	// in our update function we modify the state which will
@@ -56,7 +54,7 @@ class Sidebar extends Component {
 	}
 
 	handleRemoveClick = (e) => {
-		this.props.model.removeDishFromMenu(e.target.id)
+		this.props.model.removeDishFromMenu(parseInt(e.currentTarget.getAttribute('id'), 10))
 	}
 
 

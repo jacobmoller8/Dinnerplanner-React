@@ -76,11 +76,16 @@ const DinnerModel = function () {
 
   //Removes dish from menu
   this.removeDishFromMenu = function (id) {
-    for (var i = 0; i < menu.length; i++) {
-      if (id === menu[i].id) {
-        var index = i;
-      }
-    }
+		let counter = 0
+		let index = 0
+
+		for (let item in menu){
+			if (parseInt(menu[item].id, 10) === id){
+				index = counter
+				break;
+			}
+			counter += 1
+		}
     menu.splice(index, 1);
     notifyObservers();
   }

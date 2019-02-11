@@ -33,8 +33,14 @@
     margin: 0;
 }
 
-.menuitem{
-    padding-right: none;
+.menuItem{
+		overflow: hidden;
+}
+
+.menuItem:after{
+	clear: both;
+	content: "";
+	display: block;
 }
 
 .menuItem:hover{
@@ -44,4 +50,13 @@
 .peopleSelector{
 	display: block;
 	margin: 0 auto;
+}
+
+.itemTitle{
+	float: left;
+}
+
+
+.itemCost{
+	float: right;
 }

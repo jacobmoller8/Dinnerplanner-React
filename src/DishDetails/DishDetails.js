@@ -31,9 +31,11 @@ class DishDetails extends Component {
     }
 
     handleAddClick = () => {
-        this.props.model.addDishToMenu(this.state.dish)
-    }
-
+				this.props.model.addDishToMenu(this.state.dish)
+		}
+		
+	
+		
     render() {
         let dish = null;
         let table = null;
@@ -95,7 +97,7 @@ class DishDetails extends Component {
                             <h3 className="title">Ingredients</h3>
                             {table}
                             <div className="container-fluid" id="addBtnContainer">
-                                <Button component={Link} to="/details" onClick={this.handleAddClick} variant='contained' id="addToMenuBtn">
+                                <Button component={Link} to="/search" onClick={this.handleAddClick} variant='contained' id="addToMenuBtn">
                                     Add to menu
                                 </Button>
                             </div>
