@@ -4,7 +4,7 @@ Jacob Möller & Hugo Bergqvist
 DH2642 Lab 4
 
 
-## Uppdatering 10/2-19
+## Uppdatering 11/2-19
 
 OBS: setState() Triggar en re-render, risk för loopar!
 
@@ -15,9 +15,9 @@ Dishes.js
 * Fixa så att knappen på maträtter leder till rätt dishDetails (DONE)
 
 Sidebar.js  
-* Det går inte att ta bort maträtter
-* Uppdatera priser med antalet personer
-* Lägga in totalpris
+* Det går inte att ta bort maträtter (DONE)
+* Uppdatera priser med antalet personer (DONE)
+* Lägga in totalpris (DONE)
 
 DishDetails.js
 * Lägg till pris för maträtt (DONE)
