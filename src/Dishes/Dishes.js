@@ -10,20 +10,15 @@ import Header from "../Header/Header"
 class Dishes extends Component {
   constructor(props) {
     super(props);
-    // We create the state to store the various statuses
-		// e.g. API data loading or error 
-		this.submitHandler = this.submitHandler.bind(this);
+
+    this.submitHandler = this.submitHandler.bind(this);
     this.state = {
       status: 'INITIAL',
       dishes: []
     }
   }
 
-  // this methods is called by React lifecycle when the 
-  // component is actually shown to the user (mounted to DOM)
-  // that's a good place to call the API and get the data
   componentDidMount = () => {
-    this.props.model.addObserver(this);
 
     var filterValue = this.refs.filterInput.value;
     var typeValue = this.refs.typeSelect.value;
@@ -62,29 +57,18 @@ class Dishes extends Component {
         })
       })
     }
-    // when data is retrieved we update the state
-    // this will cause the component to re-render
+
   }
 
-  componentWillUnmount() {
-    this.props.model.removeObserver(this);
-	}
-	
-	submitHandler(e){
-		e.preventDefault();
-		this.componentDidMount();
-	}
 
-  update = () => {
-    console.log("hej");
+  submitHandler(e) {
+    e.preventDefault();
+    this.componentDidMount();
   }
 
   render() {
     let dishesList = null;
 
-    // depending on the state we either generate
-    // useful message to the user or show the list
-    // of returned dishes
     switch (this.state.status) {
       case 'INITIAL':
         dishesList = <div className="lds-dual-ring" id="loader"></div>

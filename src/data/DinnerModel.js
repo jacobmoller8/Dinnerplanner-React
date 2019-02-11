@@ -14,7 +14,6 @@ const DinnerModel = function () {
 
   this.addObserver = function (observer) {
     observers.push(observer);
-    console.log(observers);
   };
 
   this.removeObserver = function (observer) {

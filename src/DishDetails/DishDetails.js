@@ -8,8 +8,7 @@ import Button from '@material-ui/core/Button';
 class DishDetails extends Component {
     constructor(props) {
         super(props);
-        // We create the state to store the various statuses
-        // e.g. API data loading or error 
+
         this.handleAddClick = this.handleAddClick.bind(this);
         this.state = {
             status: 'INITIAL',
