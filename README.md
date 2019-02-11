@@ -31,10 +31,10 @@ DinnerPrintout.js
 * Dynamiska delen med bilder och beskrivning (DONE)
 
 Annat:
-* Ta bort konsol rekommendationer / buggar
+* Ta bort konsol rekommendationer / buggar (DONE)
 * Cookies
 * Enter buggen i Dishes.js (DONE)
-* Se över observers så att allt kallas på rätt sätt
+* Se över observers så att allt kallas på rätt sätt (DONE)
 * MobileNavBar (samma filer som sidebar eller nya?)
 
 
