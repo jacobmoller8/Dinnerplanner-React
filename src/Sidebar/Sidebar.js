@@ -32,7 +32,7 @@ class Sidebar extends Component {
 		let loadedMenu = this.props.model.getFullMenu().map((dish, i) =>
 			<div className="container-fluid col-12 menuItem" key={dish.title + " " + i} id={parseInt(dish.id, 10)} onClick={this.handleRemoveClick}>
 				<div className="container-fluid col-6 dishName">{dish.title}</div>
-				<div className="container-fluid col-6 cost">{dish.pricePerServing * this.props.model.getNumberOfGuests()}</div>
+				<div className="container-fluid col-6 cost">{Math.round(dish.pricePerServing * this.props.model.getNumberOfGuests(), 1)}</div>
 			</div>);
 		
 
