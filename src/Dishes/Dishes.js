@@ -11,7 +11,8 @@ class Dishes extends Component {
   constructor(props) {
     super(props);
     // We create the state to store the various statuses
-    // e.g. API data loading or error 
+		// e.g. API data loading or error 
+		this.submitHandler = this.submitHandler.bind(this);
     this.state = {
       status: 'INITIAL',
       dishes: []
@@ -22,7 +23,6 @@ class Dishes extends Component {
   // component is actually shown to the user (mounted to DOM)
   // that's a good place to call the API and get the data
   componentDidMount = () => {
-
     this.props.model.addObserver(this);
 
     var filterValue = this.refs.filterInput.value;
@@ -68,7 +68,12 @@ class Dishes extends Component {
 
   componentWillUnmount() {
     this.props.model.removeObserver(this);
-  }
+	}
+	
+	submitHandler(e){
+		e.preventDefault();
+		this.componentDidMount();
+	}
 
   update = () => {
     console.log("hej");
@@ -109,7 +114,7 @@ class Dishes extends Component {
         <div className="container-fluid col offset-sm-3 offset-lg-2 col-sm-9 col-lg-10" id="dishSearchNav">
           <h4>FIND A DISH</h4>
 
-          <form id="dishSearchForm">
+          <form id="dishSearchForm" onSubmit={this.submitHandler}>
             <div className="form-row">
               <div className="form-group col-5">
                 <input className="form-control" id="filterInput" ref="filterInput" placeholder="Enter keywords" />
