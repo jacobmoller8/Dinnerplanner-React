@@ -34,6 +34,7 @@ class Sidebar extends Component {
 				<div className="container-fluid col-6 dishName">{dish.title}</div>
 				<div className="container-fluid col-6 cost">{dish.pricePerServing * this.props.model.getNumberOfGuests()}</div>
 			</div>);
+		
 
 		return loadedMenu
 	}
@@ -74,7 +75,12 @@ class Sidebar extends Component {
 						<div className="container-fluid col-6 cost">Cost</div>
 					</div>
 				</div>
+
 				{this.state.currentMenu}
+
+				<div className="container-fluid col-12 grandTotalContainer">
+					<p className="grandTotal">Total: {this.props.model.getTotalMenuPrice()} SEK</p>
+				</div>
 
 				<div className="container-fluid btnContainer">
 					<Button component={Link} to="/overview" variant='contained' id="confirmDinnerBtn">
