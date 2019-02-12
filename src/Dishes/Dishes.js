@@ -98,7 +98,7 @@ class Dishes extends Component {
         break;
       case 'LOADED':
         dishesList = this.state.dishes.map((dish) =>
-          <div className="container-fluid col-12 col-lg-3 col-md-4 col-sm-4 imgCont" key={dish.id}>
+          <div className="container-fluid col-12 col-lg-3 col-md-4 col-sm-6 imgCont" key={dish.id}>
             <img src={"https://spoonacular.com/recipeImages/" + dish.image} className="foodPic" alt="" />
             <Link to="/Details">
               <button onClick={() => modelInstance.setSelectedDishId(dish.id)} id={dish.id} className="btn btn-secondary dishBtn">{dish.title}</button>
@@ -145,7 +145,7 @@ class Dishes extends Component {
           </form>
         </div>
 
-        <div className="container-fluid offset-md-3  offset-lg-2 col-7 col-sm-9 col-lg-10" id="dishSearchBody">
+        <div className="container-fluid offset-md-3  offset-lg-2 col-10 col-sm-9 col-lg-10" id="dishSearchBody">
           <div className='row'>
             {dishesList}
           </div>

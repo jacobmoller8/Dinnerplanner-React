@@ -111,11 +111,11 @@ class DishDetails extends Component {
                 <Header />
                 {this.navHandler()}
 
-                <div id="dishDetails" className="container-fluid col offset-sm-3 offset-lg-2 col-sm-9 col-lg-10">
+                <div id="dishDetails" className="container-fluid col offset-md-3 offset-lg-2 col-sm-9 col-lg-10">
                     <div className="row">
 
                         {/* The left part of the view, describing the dish*/}
-                        <div className="container-fluid col-12 col-sm-6" id="dishDescription">
+                        <div className="container-fluid col-12 col-md-6" id="dishDescription">
                             <h3 className="title" >{dish.title}</h3>
                             <img className="img-fluid" src={dish.image} alt="Unable to load..." id="dishImage" />
                             <p>{dish.instructions}</p>
@@ -127,7 +127,7 @@ class DishDetails extends Component {
                         </div>
 
                         {/* The right part of the view, describing the ingredients of the dish*/}
-                        <div className="container-fluid col-12 col-sm-6" id="dishIngredients">
+                        <div className="container-fluid col-12 col-md-6" id="dishIngredients">
                             <h3 className="title">Ingredients</h3>
                             {table}
                             <div className="container-fluid" id="addBtnContainer">

@@ -64,14 +64,14 @@ export class TopNavbar extends Component {
 			<div>
 				<Navbar bg="light" expand="lg">
 					<Navbar.Brand href="#home">
-						<div className="row">
-							<div className="container-fluid col">
+					<div className="row">
+							<div className="container-fluid col-4">
 								<h4>My Dinner</h4>
 							</div>
-							<div className="container-fluid col" id="priceOnCollapse">
+							<div className="container-fluid col-4" id="priceOnCollapse">
 								<p>{this.props.model.getTotalMenuPrice()} SEK </p>
 							</div>
-						</div>
+							</div>
 					</Navbar.Brand>
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
 					<Navbar.Collapse id="basic-navbar-nav">
