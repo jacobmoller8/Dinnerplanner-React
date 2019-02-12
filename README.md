@@ -34,8 +34,10 @@ Annat:
 * Ta bort konsol rekommendationer / buggar (DONE)
 * Cookies
 * Enter buggen i Dishes.js (DONE)
-* Se över observers så att allt kallas på rätt sätt (DONE)
-* MobileNavBar (samma filer som sidebar eller nya?)
+* Se över observers så att allt kallas på rätt sätt
+* MobileNavBar (samma filer som sidebar eller nya?) (IN PROGRESS)
+	- Har bara applicerat i Dishes, inte i dishDetails än
+	- Ska utforska .throttle på resize-eventet, just nu ser det hackigt ut vid resize men throttle kan minska 		uppdateringshastigheten på hur ofta eventListnern lyssnar -> mer smooth
 
 
 
