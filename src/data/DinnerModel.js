@@ -28,27 +28,45 @@ const DinnerModel = function () {
   this.setNumberOfGuests = function (num) {
     if (num < 1) return;
     numberOfGuests = num;
+    if (typeof (Storage) !== "undefined") {
+      localStorage.setItem("numberOfGuests", JSON.stringify(numberOfGuests));
+    }
     notifyObservers();
   };
 
   // Get Number of Guests
   this.getNumberOfGuests = function () {
+    numberOfGuests = localStorage.getItem("numberOfGuests");
+    if (numberOfGuests === null) {
+      numberOfGuests = 1;
+    }
     return numberOfGuests;
   };
 
   //Returns the dish that is on the menu for selected type 
   this.getSelectedDish = function () {
+    selectedDish = localStorage.getItem("selectedDish");
+    if (selectedDish === null) {
+      selectedDish = 684100;
+    }
     return selectedDish;
   }
 
   // Set Selected Dish Id
   this.setSelectedDishId = function (id) {
     selectedDish = id;
+    if (typeof (Storage) !== "undefined") {
+      localStorage.setItem("selectedDish", JSON.stringify(selectedDish));
+    }
     notifyObservers();
   }
 
   //Returns all the dishes on the menu.
   this.getFullMenu = function () {
+    menu = JSON.parse(localStorage.getItem("menu"));
+    if (menu === null) {
+      menu = [];
+    }
     return menu;
   }
 
@@ -71,6 +89,9 @@ const DinnerModel = function () {
   //Add dish to menu
   this.addDishToMenu = function (dish) {
     menu.push(dish);
+    if (typeof (Storage) !== "undefined") {
+      localStorage.setItem("menu", JSON.stringify(menu));
+    }
     notifyObservers();
   }
 
@@ -87,7 +108,11 @@ const DinnerModel = function () {
       counter += 1
     }
     menu.splice(index, 1);
+    if (typeof (Storage) !== "undefined") {
+      localStorage.setItem("menu", JSON.stringify(menu));
+    }
     notifyObservers();
+
   }
 
   // API Calls
