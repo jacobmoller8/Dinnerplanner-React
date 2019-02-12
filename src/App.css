@@ -1,0 +1,22 @@
+.row{
+	margin: none;
+}
+
+#errorContainer{
+	background-color: lightcoral;
+	padding: 30px;
+	border-radius: 15px;
+	margin-top: 20px;
+}
+
+#errorImg{
+	float: right;
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+#solutionContainer{
+	background-color: whitesmoke;
+	padding: 20px;
+	border-radius: 15px;
+}
