@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Navbar, NavDropdown, Nav, Form, FormControl } from 'react-bootstrap'
+import { Navbar, Nav } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import './TopNavbar.css';
 import Button from '@material-ui/core/Button';
 
@@ -79,6 +80,16 @@ export class TopNavbar extends Component {
 							</div>
 
 							{this.state.currentMenu}
+
+							<div className="container-fluid col-12 grandTotalContainer">
+								<p className="grandTotal">Total: {this.props.model.getTotalMenuPrice()} SEK</p>
+							</div>
+
+							<div className="container-fluid btnContainer">
+								<Button component={Link} to="/overview" variant='contained' id="confirmDinnerBtn">
+									Confirm Dinner
+         				</Button>
+							</div>
 						</Nav>
 					</Navbar.Collapse>
 				</Navbar>
