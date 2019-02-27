@@ -124,7 +124,7 @@ const DinnerModel = function () {
     var typeVar = ""
     if (filter) { filterVar = filter }
     if (type) { typeVar = type }
-    var ApiUrl = `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?instructionsRequired=false&limitLicense=false&number=8&offset=0&query=${filterVar}&type=${typeVar}`
+    var ApiUrl = `http://sunset.nada.kth.se:8080/iprog/group/4/recipes/search?instructionsRequired=false&limitLicense=false&number=8&offset=0&query=${filterVar}&type=${typeVar}`
     return fetch(ApiUrl
       , {
         headers: { 'X-Mashape-Key': key }
@@ -133,7 +133,7 @@ const DinnerModel = function () {
   }
   // Get selected dish from API
   this.getDishApi = function (id) {
-    var ApiUrl = `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/${id}/information`;
+    var ApiUrl = `http://sunset.nada.kth.se:8080/iprog/group/4/recipes/${id}/information`;
     return fetch(ApiUrl
       , {
         headers: { 'X-Mashape-Key': key }
