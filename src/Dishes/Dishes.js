@@ -6,12 +6,15 @@ import { modelInstance } from '../data/DinnerModel';
 import Sidebar from '../Sidebar/Sidebar';
 import { Link } from 'react-router-dom';
 import Header from "../Header/Header"
+import TopNavbar from "../TopNavbar/TopNavbar"
 
 class Dishes extends Component {
   constructor(props) {
     super(props);
 
-    this.submitHandler = this.submitHandler.bind(this);
+		this.submitHandler = this.submitHandler.bind(this);
+		this.navHandler = this.navHandler.bind(this);
+		this.resize = this.resize.bind(this);
     this.state = {
       status: 'INITIAL',
       dishes: []
@@ -19,6 +22,7 @@ class Dishes extends Component {
   }
 
   componentDidMount = () => {
+		window.addEventListener('resize', this.resize)
 
     var filterValue = this.refs.filterInput.value;
     var typeValue = this.refs.typeSelect.value;
@@ -58,15 +62,34 @@ class Dishes extends Component {
       })
     }
 
-  }
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener('resize', this.resize)
+	}
 
 
   submitHandler(e) {
     e.preventDefault();
     this.componentDidMount();
-  }
+	}
+	
+	navHandler(){
+		let navigation = null;
+
+		let width = window.innerWidth;
+			if (width > 768) {
+				navigation = <Sidebar model={this.props.model} />
+			}else{
+				navigation = <TopNavbar model={this.props.model}/>
+				}
+			return navigation
+	}
+
+	resize = () => this.forceUpdate()
 
   render() {
+
     let dishesList = null;
 
     switch (this.state.status) {
@@ -75,7 +98,7 @@ class Dishes extends Component {
         break;
       case 'LOADED':
         dishesList = this.state.dishes.map((dish) =>
-          <div className="container-fluid col-12 col-lg-3 col-md-3 col-sm-4 imgCont" key={dish.id}>
+          <div className="container-fluid col-12 col-lg-3 col-md-4 col-sm-6 imgCont" key={dish.id}>
             <img src={"https://spoonacular.com/recipeImages/" + dish.image} className="foodPic" alt="" />
             <Link to="/Details">
               <button onClick={() => modelInstance.setSelectedDishId(dish.id)} id={dish.id} className="btn btn-secondary dishBtn">{dish.title}</button>
@@ -85,17 +108,17 @@ class Dishes extends Component {
         break;
       default:
         dishesList = <b>Failed to load data, please try again</b>
-        break;
+				break;
+
     }
 
     return (
       <div className="SelectDish">
         <Header />
 
-        {/* We pass the model as property to the Sidebar component */}
-        <Sidebar model={this.props.model} />
+				{this.navHandler()}
 
-        <div className="container-fluid col offset-sm-3 offset-lg-2 col-sm-9 col-lg-10" id="dishSearchNav">
+        <div className="container-fluid col offset-md-3 offset-lg-2 col-sm-9 col-lg-10" id="dishSearchNav">
           <h4>FIND A DISH</h4>
 
           <form id="dishSearchForm" onSubmit={this.submitHandler}>
@@ -122,7 +145,7 @@ class Dishes extends Component {
           </form>
         </div>
 
-        <div className="container-fluid offset-sm-3 offset-lg-2 col-7 col-sm-9 col-lg-10" id="dishSearchBody">
+        <div className="container-fluid offset-md-3  offset-lg-2 col-10 col-sm-9 col-lg-10" id="dishSearchBody">
           <div className='row'>
             {dishesList}
           </div>

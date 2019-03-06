@@ -4,12 +4,16 @@ import { Link } from 'react-router-dom';
 import Header from "../Header/Header"
 import Sidebar from '../Sidebar/Sidebar';
 import Button from '@material-ui/core/Button';
+import TopNavbar from "../TopNavbar/TopNavbar"
 
 class DishDetails extends Component {
     constructor(props) {
         super(props);
 
-        this.handleAddClick = this.handleAddClick.bind(this);
+				this.handleAddClick = this.handleAddClick.bind(this);
+				this.navHandler = this.navHandler.bind(this);
+				this.resize = this.resize.bind(this);
+
         this.state = {
             status: 'INITIAL',
             numberOfGuests: this.props.model.getNumberOfGuests()
@@ -18,7 +22,8 @@ class DishDetails extends Component {
 
     componentDidMount = () => {
 
-        this.props.model.addObserver(this);
+				this.props.model.addObserver(this);
+				window.addEventListener('resize', this.resize)
 
         this.props.model.getDishApi(this.props.model.getSelectedDish()).then(result => {
             this.setState({
@@ -33,8 +38,26 @@ class DishDetails extends Component {
     }
 
     componentWillUnmount() {
-        this.props.model.removeObserver(this);
-    }
+				this.props.model.removeObserver(this);
+				window.removeEventListener('resize', this.resize);
+		}
+		
+		navHandler(){
+			let navigation = null;
+	
+			let width = window.innerWidth;
+				if (width > 768) {
+					navigation = <Sidebar model={this.props.model} />
+				}else{
+					navigation = <TopNavbar model={this.props.model}/>
+					}
+				return navigation
+		}
+	
+		resize = () => this.forceUpdate()
+	
+
+
 
     handleAddClick = () => {
         this.props.model.addDishToMenu(this.state.dish)
@@ -86,13 +109,13 @@ class DishDetails extends Component {
         return (
             <React.Fragment>
                 <Header />
-                <Sidebar model={this.props.model} />
+                {this.navHandler()}
 
-                <div id="dishDetails" className="container-fluid col offset-sm-3 offset-lg-2 col-sm-9 col-lg-10">
+                <div id="dishDetails" className="container-fluid col offset-md-3 offset-lg-2 col-sm-9 col-lg-10">
                     <div className="row">
 
                         {/* The left part of the view, describing the dish*/}
-                        <div className="container-fluid col-6" id="dishDescription">
+                        <div className="container-fluid col-12 col-md-6" id="dishDescription">
                             <h3 className="title" >{dish.title}</h3>
                             <img className="img-fluid" src={dish.image} alt="Unable to load..." id="dishImage" />
                             <p>{dish.instructions}</p>
@@ -104,7 +127,7 @@ class DishDetails extends Component {
                         </div>
 
                         {/* The right part of the view, describing the ingredients of the dish*/}
-                        <div className="container-fluid col-6" id="dishIngredients">
+                        <div className="container-fluid col-12 col-md-6" id="dishIngredients">
                             <h3 className="title">Ingredients</h3>
                             {table}
                             <div className="container-fluid" id="addBtnContainer">
